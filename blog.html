@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demet Ayaz - Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/mobile-menu.js" defer></script>
+    <style>
+        body, p, div {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+        h1, h2, h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+        .font-medium, button, .nav-link, .btn {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+        
+        /* Dropdown menu styles */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+        }
+        
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .nav-dropdown:hover .dropdown-menu,
+        .dropdown-menu.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        
+        .dropdown-trigger:focus + .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white fixed top-0 left-0 right-0 z-50 flex items-center">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="logo.png" alt="Logo" class="logo-image h-10">
+                <span class="logo-text ml-2 font-medium">Demet Ayaz</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="hidden lg:flex space-x-8">
+                <a href="index.html" class="nav-link">Ana Sayfa</a>
+                <a href="hakkimda.html" class="nav-link">Hakkımda</a>
+                
+                <!-- Dropdown for Hizmetlerimiz -->
+                <div class="relative nav-dropdown">
+                    <a href="#" class="nav-link dropdown-trigger flex items-center">
+                        Hizmetlerimiz
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu absolute bg-white shadow-lg rounded-md mt-2 py-2 w-56 z-50">
+                        <a href="yonetim-danismanligi.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Yönetim Danışmanlığı</a>
+                        <a href="egitimler.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Eğitimler</a>
+                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Gönüllü Çalışmalar</a>
+                    </div>
+                </div>
+                
+                <a href="blog.html" class="nav-link text-blue-600">Blog</a>
+                <a href="#" class="nav-link">İletişim</a>
+            </nav>
+            
+            <!-- Right Side Icons - Language Selection -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="lang-icon" title="Türkçe">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" alt="Türkçe" class="h-5 w-auto rounded-sm">
+                </a>
+                <a href="#" class="lang-icon" title="English">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" alt="English" class="h-5 w-auto rounded-sm">
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Blog Content -->
+    <section style="zoom: 85%;"  class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row">
+                <!-- Blog Posts Grid -->
+                <div class="w-full lg:w-2/3 lg:pr-12">
+                    <!-- Featured Blog Post -->
+                    <div class="mb-12 bg-white rounded-xl shadow-md overflow-hidden animate-section animate-fade">
+                        <div class="md:flex">
+                            <div class="md:w-1/3">
+                                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80" 
+                                    alt="Tedarik Zincirinde Kriz Yönetimi" class="h-full w-full object-cover">
+                            </div>
+                            <div class="p-8 md:w-2/3">
+                                <div class="flex items-center mb-4">
+                                    <span class="text-sm text-blue-600 font-medium mr-4">Tedarik Zinciri</span>
+                                    <span class="text-sm text-gray-500">26 Ekim 2023</span>
+                                </div>
+                                <h2 class="text-2xl font-bold mb-4 text-gray-800">Tedarik Zincirinde Kriz Yönetimi: COVID-19'dan Öğrendiğimiz Dersler</h2>
+                                <p class="text-gray-600 mb-6">
+                                    Pandemi sürecinde tedarik zincirlerinin karşılaştığı zorluklar ve bu süreçte öğrenilen kritik dersler. Gelecekteki krizlere hazırlık için şirketlerin alması gereken önlemler ve oluşturmaları gereken stratejiler.
+                                </p>
+                                <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700">
+                                    Devamını Oku <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Blog Post 1 -->
+                        <div class="bg-white rounded-lg overflow-hidden shadow-md animate-section animate-fade animate-delay-200">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                    alt="E-Ticaret Lojistiği" class="w-full h-full object-cover transform hover:scale-110 transition-all duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <span class="text-sm text-blue-600 font-medium mr-4">E-Ticaret</span>
+                                    <span class="text-sm text-gray-500">14 Ekim 2023</span>
+                                </div>
+                                <h3 class="font-bold text-xl mb-3 text-gray-800">E-Ticaret Lojistiğinde Son Mil Teslimat Stratejileri</h3>
+                                <p class="text-gray-600 mb-5">
+                                    E-ticaret sektöründe son mil teslimat süreçlerini optimize etmenin yolları ve müşteri memnuniyetini artıran yenilikçi yaklaşımlar.
+                                </p>
+                                <a href="#" class="inline-block text-blue-600 font-medium hover:text-blue-700">Devamını Oku</a>
+                            </div>
+                        </div>
+
+                        <!-- Blog Post 2 -->
+                        <div class="bg-white rounded-lg overflow-hidden shadow-md animate-section animate-fade animate-delay-400">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1604762524889-3e2fcc145683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                                    alt="Sürdürülebilir Tedarik Zinciri" class="w-full h-full object-cover transform hover:scale-110 transition-all duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <span class="text-sm text-blue-600 font-medium mr-4">Sürdürülebilirlik</span>
+                                    <span class="text-sm text-gray-500">2 Ekim 2023</span>
+                                </div>
+                                <h3 class="font-bold text-xl mb-3 text-gray-800">Sürdürülebilir Tedarik Zinciri Oluşturmanın 5 Adımı</h3>
+                                <p class="text-gray-600 mb-5">
+                                    Çevresel etkiyi azaltan ve sosyal sorumluluk bilincini artıran sürdürülebilir tedarik zinciri uygulamaları için pratik öneriler.
+                                </p>
+                                <a href="#" class="inline-block text-blue-600 font-medium hover:text-blue-700">Devamını Oku</a>
+                            </div>
+                        </div>
+
+                        <!-- Blog Post 3 -->
+                        <div class="bg-white rounded-lg overflow-hidden shadow-md animate-section animate-fade animate-delay-600">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                                    alt="Tedarik Zinciri Analizi" class="w-full h-full object-cover transform hover:scale-110 transition-all duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <span class="text-sm text-blue-600 font-medium mr-4">Vaka Analizi</span>
+                                    <span class="text-sm text-gray-500">18 Eylül 2023</span>
+                                </div>
+                                <h3 class="font-bold text-xl mb-3 text-gray-800">Örnek Olay: Bir Gıda Şirketinin Tedarik Zinciri Dönüşümü</h3>
+                                <p class="text-gray-600 mb-5">
+                                    Global bir gıda şirketinin tedarik zinciri süreçlerini nasıl optimize ettiği ve verimlilik artışı sağladığı üzerine bir vaka analizi.
+                                </p>
+                                <a href="#" class="inline-block text-blue-600 font-medium hover:text-blue-700">Devamını Oku</a>
+                            </div>
+                        </div>
+
+                        <!-- Blog Post 4 -->
+                        <div class="bg-white rounded-lg overflow-hidden shadow-md animate-section animate-fade animate-delay-800">
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1521791136364-f9766hoaa5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                                    alt="Yapay Zeka ve Lojistik" class="w-full h-full object-cover transform hover:scale-110 transition-all duration-500">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <span class="text-sm text-blue-600 font-medium mr-4">Lojistik</span>
+                                    <span class="text-sm text-gray-500">5 Eylül 2023</span>
+                                </div>
+                                <h3 class="font-bold text-xl mb-3 text-gray-800">Yapay Zeka ve Makine Öğrenmesinin Lojistik Sektörüne Etkileri</h3>
+                                <p class="text-gray-600 mb-5">
+                                    Modern lojistik operasyonlarında yapay zeka ve makine öğrenmesi uygulamaları, sunduğu fırsatlar ve karşılaşılan zorluklar.
+                                </p>
+                                <a href="#" class="inline-block text-blue-600 font-medium hover:text-blue-700">Devamını Oku</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Pagination -->
+                    <div class="mt-12 flex justify-center">
+                        <nav class="inline-flex rounded-md shadow">
+                            <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-l-md hover:bg-gray-50">Önceki</a>
+                            <a href="#" class="px-4 py-2 bg-blue-600 text-white border border-blue-600">1</a>
+                            <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50">2</a>
+                            <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50">3</a>
+                            <a href="#" class="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-r-md hover:bg-gray-50">Sonraki</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="w-full lg:w-1/3 mt-12 lg:mt-0">
+                    <!-- About Author -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Demet Ayaz" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h3 class="font-bold text-gray-800">Demet Ayaz</h3>
+                                <p class="text-gray-600 text-sm">Tedarik Zinciri ve Lojistik Uzmanı</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            15 yılı aşkın uluslararası tedarik zinciri ve lojistik deneyimiyle şirketlerin operasyonel verimliliğini artıran çözümler sunuyorum.
+                        </p>
+                        <a href="hakkimda.html" class="text-blue-600 font-medium hover:text-blue-700">Hakkımda sayfasını ziyaret et</a>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <h3 class="font-bold text-gray-800 mb-4">Ara</h3>
+                        <form>
+                            <div class="flex">
+                                <input type="text" placeholder="Blog yazılarında ara..." class="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <h3 class="font-bold text-gray-800 mb-4">Popüler Yazılar</h3>
+                        <ul class="space-y-4">
+                            <li class="flex">
+                                <div class="w-20 h-20 flex-shrink-0 rounded-md overflow-hidden mr-4">
+                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 hover:text-blue-600 mb-1">
+                                        <a href="#">E-Ticaret Lojistiğinde Son Mil Teslimat Stratejileri</a>
+                                    </h4>
+                                    <p class="text-gray-500 text-sm">14 Ekim 2023</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="w-20 h-20 flex-shrink-0 rounded-md overflow-hidden mr-4">
+                                    <img src="https://images.unsplash.com/photo-1604762524889-3e2fcc145683?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 hover:text-blue-600 mb-1">
+                                        <a href="#">Sürdürülebilir Tedarik Zinciri Oluşturmanın 5 Adımı</a>
+                                    </h4>
+                                    <p class="text-gray-500 text-sm">2 Ekim 2023</p>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="w-20 h-20 flex-shrink-0 rounded-md overflow-hidden mr-4">
+                                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 hover:text-blue-600 mb-1">
+                                        <a href="#">Örnek Olay: Bir Gıda Şirketinin Tedarik Zinciri Dönüşümü</a>
+                                    </h4>
+                                    <p class="text-gray-500 text-sm">18 Eylül 2023</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <h3 class="font-bold text-gray-800 mb-4">Kategoriler</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#" class="flex justify-between text-gray-600 hover:text-blue-600">
+                                    <span>Tedarik Zinciri</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 rounded-full text-xs">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex justify-between text-gray-600 hover:text-blue-600">
+                                    <span>Lojistik</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 rounded-full text-xs">8</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex justify-between text-gray-600 hover:text-blue-600">
+                                    <span>E-Ticaret</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 rounded-full text-xs">5</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex justify-between text-gray-600 hover:text-blue-600">
+                                    <span>Sürdürülebilirlik</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 rounded-full text-xs">7</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex justify-between text-gray-600 hover:text-blue-600">
+                                    <span>Vaka Analizleri</span>
+                                    <span class="bg-gray-100 text-gray-700 px-2 rounded-full text-xs">4</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="bg-blue-50 rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-gray-800 mb-2">Bültene Abone Olun</h3>
+                        <p class="text-gray-600 mb-4">En son blog yazılarından ve güncellemelerden haberdar olmak için bültene kaydolun.</p>
+                        <form>
+                            <input type="email" placeholder="E-posta adresiniz" class="w-full px-4 py-2 mb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 font-medium">
+                                Abone Ol
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+   <!-- Footer Section -->
+   <footer style="zoom: 0.8; background-color: #CCDDEA;" class="text-gray-800 py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Column 1: About & Contact -->
+            <div>
+                <div class="flex items-center mb-6">
+                    <img src="logo.png" alt="Logo" class="h-10 mr-3">
+                    <span style="font-family: 'Roboto', sans-serif; font-weight: 700;" class="text-xl">Demet Ayaz</span>
+                </div>
+                <p style="font-family: 'Roboto', sans-serif; font-weight: 400;" class="text-gray-700 mb-4">
+                    Tedarik zinciri ve lojistik alanında uzman danışmanlık ve eğitim hizmetleri.
+                </p>
+               
+            </div>
+            
+            <!-- Column 2: Services -->
+            <div>
+                <h3 style="font-family: 'Roboto', sans-serif; font-weight: 700;" class="text-lg mb-6 text-gray-900">Hizmetlerimiz</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="yonetim-danismanligi.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                            Yönetim Danışmanlığı
+                        </a>
+                    </li>
+                    <li>
+                        <a href="egitimler.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                            Eğitimler
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gonullu-calismalar.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                            Gönüllü Çalışmalar
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            <!-- Column 3: Quick Links -->
+            <div>
+                <h3 style="font-family: 'Roboto', sans-serif; font-weight: 700;" class="text-lg mb-6 text-gray-900">Hızlı Bağlantılar</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="hakkimda.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                            Hakkımda
+                        </a>
+                    </li>
+                    <li>
+                        <a href="blog.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">Blog</a>
+                    </li>
+                    <li>
+
+                        <a href="iletisim.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                            İletişim
+                        </a>
+                    </li>
+                   </ul>
+            </div>
+            
+            <!-- Social Media -->
+                <div>
+                    <h4 style="font-family: 'Roboto', sans-serif; font-weight: 500;" class="text-gray-900 mb-3">Sosyal Medya</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="mt-6">
+                        <h4 style="font-family: 'Roboto', sans-serif; font-weight: 500;" class="text-gray-900 mb-3">İletişim</h4>
+                        <div class="flex flex-col space-y-2">
+                            <a href="mailto:Ayazd@mef.edu.tr" class="text-gray-700 hover:text-gray-900 transition-colors flex items-center" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                                <i class="fas fa-envelope mr-2 text-blue-600"></i> Ayazd@mef.edu.tr
+                            </a>
+                            <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors flex items-center" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i> Çanakkale, Biga
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="border-t border-gray-400 mt-10 pt-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p style="font-family: 'Roboto', sans-serif; font-weight: 400;" class="text-gray-700 text-sm text-center w-full">
+                    &copy; 2023 Demet Ayaz. Tüm hakları saklıdır.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Scroll animation script
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.animate-section');
+            
+            // Initial check on page load
+            checkSections();
+            
+            // Check sections on scroll
+            window.addEventListener('scroll', checkSections);
+            
+            function checkSections() {
+                const triggerBottom = window.innerHeight * 0.85;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    
+                    if (sectionTop < triggerBottom) {
+                        section.classList.add('visible');
+                    } else {
+                        // Optional: remove the class if you want elements to animate again when scrolling back up
+                        // section.classList.remove('visible');
+                    }
+                });
+            }
+            
+            // Make dropdown menu work with clicks as well
+            const dropdownTrigger = document.querySelector('.dropdown-trigger');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            const navDropdown = document.querySelector('.nav-dropdown');
+            
+            if (dropdownTrigger && dropdownMenu) {
+                // Toggle dropdown on click
+                dropdownTrigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdownMenu.classList.toggle('active');
+                });
+                
+                // Close the dropdown when clicking outside of the dropdown area
+                document.addEventListener('click', function(e) {
+                    if (!navDropdown.contains(e.target)) {
+                        dropdownMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demet Ayaz - İletişim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body, p, div {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+        h1, h2, h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+        .font-medium, button, .nav-link, .btn {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+        
+        /* Dropdown menu styles */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+        }
+        
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .nav-dropdown:hover .dropdown-menu,
+        .dropdown-menu.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        
+        .dropdown-trigger:focus + .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            cursor: pointer;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-answer.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Header/Navigation -->
+    <header class="bg-white fixed top-0 left-0 right-0 z-50 flex items-center">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="logo.png" alt="Logo" class="logo-image h-10">
+                <span class="logo-text ml-2">Demet Ayaz</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="hidden lg:flex space-x-8">
+                <a href="index.html" class="nav-link">Ana Sayfa</a>
+                <a href="hakkimda.html" class="nav-link">Hakkımda</a>
+                
+                <!-- Dropdown for Hizmetlerimiz -->
+                <div class="relative nav-dropdown">
+                    <a href="#" class="nav-link dropdown-trigger flex items-center">
+                        Hizmetlerimiz
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu absolute bg-white shadow-lg rounded-md mt-2 py-2 w-56 z-50">
+                        <a href="yonetim-danismanligi.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Yönetim Danışmanlığı</a>
+                        <a href="egitimler.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Eğitimler</a>
+                        <a href="gonullu-calismalar.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition-colors">Gönüllü Çalışmalar</a>
+                    </div>
+                </div>
+                
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+            </nav>
+            
+            <!-- Right Side Icons - Language Selection -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="lang-icon" title="Türkçe">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" alt="Türkçe" class="h-5 w-auto rounded-sm">
+                </a>
+                <a href="#" class="lang-icon" title="English">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" alt="English" class="h-5 w-auto rounded-sm">
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section style="zoom: 90%;" class="pt-32 pb-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">İletişim</h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">İletişim Bilgileri</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-map-marker-alt text-blue-600 mt-1"></i>
+                                <div>
+                                    <h3 class="font-medium text-gray-800">Adres</h3>
+                                    <p class="text-gray-600">İstanbul, Türkiye</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-envelope text-blue-600 mt-1"></i>
+                                <div>
+                                    <h3 class="font-medium text-gray-800">E-posta</h3>
+                                    <a href="mailto:info@demetayaz.com" class="text-blue-600 hover:text-blue-700">info@demetayaz.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-phone text-blue-600 mt-1"></i>
+                                <div>
+                                    <h3 class="font-medium text-gray-800">Telefon</h3>
+                                    <a href="tel:+902121234567" class="text-blue-600 hover:text-blue-700">+90 (212) 123 45 67</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Sosyal Medya</h2>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-blue-400 transition-colors">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-purple-600 transition-colors">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-blue-800 transition-colors">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Sıkça Sorulan Sorular</h2>
+                    <div class="space-y-4">
+                        <div class="faq-item py-4">
+                            <div class="faq-question flex justify-between items-center">
+                                <h3 class="text-lg font-medium text-gray-800">Danışmanlık hizmetleriniz hangi alanları kapsar?</h3>
+                                <i class="fas fa-chevron-down text-gray-500"></i>
+                            </div>
+                            <div class="faq-answer mt-2 text-gray-600">
+                                Yönetim danışmanlığı hizmetlerimiz, stratejik planlama, organizasyonel gelişim, performans yönetimi ve liderlik geliştirme gibi alanları kapsamaktadır.
+                            </div>
+                        </div>
+                        <div class="faq-item py-4">
+                            <div class="faq-question flex justify-between items-center">
+                                <h3 class="text-lg font-medium text-gray-800">Eğitim programlarınıza nasıl kayıt olabilirim?</h3>
+                                <i class="fas fa-chevron-down text-gray-500"></i>
+                            </div>
+                            <div class="faq-answer mt-2 text-gray-600">
+                                Eğitim programlarımıza kayıt olmak için e-posta adresimiz üzerinden bizimle iletişime geçebilirsiniz. Size detaylı bilgi ve kayıt formunu ileteceğiz.
+                            </div>
+                        </div>
+                        <div class="faq-item py-4">
+                            <div class="faq-question flex justify-between items-center">
+                                <h3 class="text-lg font-medium text-gray-800">Online danışmanlık hizmeti veriyor musunuz?</h3>
+                                <i class="fas fa-chevron-down text-gray-500"></i>
+                            </div>
+                            <div class="faq-answer mt-2 text-gray-600">
+                                Evet, online danışmanlık hizmeti veriyoruz. Zoom veya benzeri platformlar üzerinden görüşmelerimizi gerçekleştirebiliyoruz.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto max-w-6xl px-4">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192698.6296691816!2d28.871754966805472!3d41.005495797861575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2zxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1682523690404!5m2!1str!2str"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer style="zoom: 0.8; background-color: #CCDDEA;" class="text-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: About & Contact -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="logo.png" alt="Logo" class="h-10 mr-3">
+                        <span style="font-family: 'Roboto', sans-serif; font-weight: 700;" class="text-xl">Demet Ayaz</span>
+                    </div>
+                    <p style="font-family: 'Roboto', sans-serif; font-weight: 400;" class="text-gray-700 mb-4">
+                        Tedarik zinciri ve lojistik alanında uzman danışmanlık ve eğitim hizmetleri.
+                    </p>
+                   
+                </div>
+                
+                <!-- Column 2: Services -->
+                <div>
+                    <h3 style="font-family: 'Roboto', sans-serif; font-weight: 700;" class="text-lg mb-6 text-gray-900">Hizmetlerimiz</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="yonetim-danismanligi.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                                Yönetim Danışmanlığı
+                            </a>
+                        </li>
+                        <li>
+                            <a href="egitimler.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                                Eğitimler
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gonullu-calismalar.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                                Gönüllü Çalışmalar
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Quick Links -->
+                <div>
+                    <h3 style="font-family: 'Roboto', sans-serif; font-weight: 700;" class="text-lg mb-6 text-gray-900">Hızlı Bağlantılar</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="hakkimda.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                                Hakkımda
+                            </a>
+                        </li>
+                        <li>
+                            <a href="blog.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">Blog</a>
+                        </li>
+                        <li>
+
+                            <a href="iletisim.html" class="text-gray-700 hover:text-gray-900 transition-colors" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                                İletişim
+                            </a>
+                        </li>
+                       </ul>
+                </div>
+                
+                <!-- Social Media -->
+                    <div>
+                        <h4 style="font-family: 'Roboto', sans-serif; font-weight: 500;" class="text-gray-900 mb-3">Sosyal Medya</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Contact Information -->
+                        <div class="mt-6">
+                            <h4 style="font-family: 'Roboto', sans-serif; font-weight: 500;" class="text-gray-900 mb-3">İletişim</h4>
+                            <div class="flex flex-col space-y-2">
+                                <a href="mailto:Ayazd@mef.edu.tr" class="text-gray-700 hover:text-gray-900 transition-colors flex items-center" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                                    <i class="fas fa-envelope mr-2 text-blue-600"></i> Ayazd@mef.edu.tr
+                                </a>
+                                <a href="#" class="text-gray-700 hover:text-gray-900 transition-colors flex items-center" style="font-family: 'Roboto', sans-serif; font-weight: 400;">
+                                    <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i> Çanakkale, Biga
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-400 mt-10 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p style="font-family: 'Roboto', sans-serif; font-weight: 400;" class="text-gray-700 text-sm text-center w-full">
+                        &copy; 2023 Demet Ayaz. Tüm hakları saklıdır.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle active class
+                answer.classList.toggle('active');
+                
+                // Rotate icon
+                icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+                
+                // Set max-height for animation
+                if (answer.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
